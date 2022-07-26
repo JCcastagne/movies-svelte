@@ -20,11 +20,25 @@
 </script>
 
 <section>
-	<PopularMovies movies={popular} />
+	<div class="container">
+		<PopularMovies movies={popular} />
+	</div>
 </section>
 
 <style>
 	section {
-		margin: 10vh 10vw;
+		width: 100vw;
+		min-height: 100vh;
+		padding: 10vh 10vw;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.container {
+		max-width: 1500px;
+		width: 100%;
 	}
 </style>

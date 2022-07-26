@@ -14,6 +14,11 @@
 </div>
 
 <style>
+	.movie-card {
+		display: flex;
+		flex-direction: column;
+	}
+
 	img {
 		width: 100%;
 		height: 100%;
@@ -23,8 +28,14 @@
 		margin-bottom: 1em;
 	}
 
-	.movie-card {
-		display: flex;
-		flex-direction: column;
+	.description h2 {
+		font-size: calc(2em * 0.66);
+		font-weight: 500;
+		margin-bottom: calc(2em * 0.165);
+	}
+
+	.description p {
+		font-size: 1em;
+		font-weight: 400;
 	}
 </style>
