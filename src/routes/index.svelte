@@ -1,2 +1,30 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script context="module">
+	export async function load({ fetch }) {
+		const URL_PREFIX = `https://api.themoviedb.org/3/movie`
+		const URL_SUFFIX = `/popular`
+		const API_KEY = `?api_key=2c3b4fc9641a33b8ac343629843d4e90&language=en-US`
+
+		const res = await fetch(`${URL_PREFIX}${URL_SUFFIX}${API_KEY}`)
+		const data = await res.json()
+		if (res.ok) {
+			return {
+				props: { popular: data.results }
+			}
+		}
+	}
+</script>
+
+<script>
+	import PopularMovies from '../components/PopularMovies.svelte'
+	export let popular
+</script>
+
+<section>
+	<PopularMovies movies={popular} />
+</section>
+
+<style>
+	section {
+		margin: 10vh 10vw;
+	}
+</style>
