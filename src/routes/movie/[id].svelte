@@ -36,13 +36,14 @@
 				</div>
 				<p>{movieDetail.overview}</p>
 				<p>
-					{new Date(movieDetail.release_date).toLocaleDateString('en-US', {
+					{`Released on ${new Date(movieDetail.release_date).toLocaleDateString('en-US', {
 						weekday: 'long',
 						year: 'numeric',
 						month: 'long',
 						day: 'numeric'
-					})}
+					})}`}
 				</p>
+				<a href={`${movieDetail.homepage}`} target="_blank">Go to website &#10095;</a>
 			</div>
 		</div>
 	</div>
@@ -73,9 +74,9 @@
 		position: absolute;
 		transition: all ease-in-out 0.2s;
 	}
-	a:link,
-	a:visited,
-	a:active {
+	.back-button a:link,
+	.back-button a:visited,
+	.back-button a:active {
 		text-decoration: none;
 		color: #c6d2de;
 		font-size: 1em;
@@ -140,5 +141,21 @@
 		font-size: 1em;
 		font-weight: 400;
 		margin-bottom: 1em;
+	}
+	.text-container > p:nth-of-type(2) {
+		opacity: 0.66;
+	}
+
+	.text-container > a,
+	.text-container > a:link,
+	.text-container > a:visited,
+	.text-container > a:active {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		text-align: right;
+		text-decoration: none;
+		color: #90cea19e;
+		font-size: 1em;
 	}
 </style>
