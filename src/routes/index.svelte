@@ -15,14 +15,15 @@
 </script>
 
 <script>
+	import Nav from '../components/Nav.svelte'
+
 	import PopularMovies from '../components/PopularMovies.svelte'
-	import SearchMovies from '../components/SearchMovies.svelte'
 	export let popular
 </script>
 
 <section>
 	<div class="container">
-		<SearchMovies />
+		<Nav />
 		<PopularMovies movies={popular} />
 	</div>
 </section>

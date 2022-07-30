@@ -3,7 +3,7 @@
 	import MovieCard from './MovieCard.svelte'
 </script>
 
-<h3>Popular movies</h3>
+<h3>Trending movies</h3>
 
 <div class="popular-movies">
 	{#each movies as movie}
