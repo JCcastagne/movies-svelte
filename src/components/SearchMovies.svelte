@@ -18,7 +18,7 @@
 		on:focus={toggleSearchInputActiveState}
 		on:blur={toggleSearchInputActiveState}
 	/>
-	<button class={searchInputActive ? 'active' : ''}>
+	<button class={searchInputActive ? 'active' : ''} for="search_movie">
 		{searchInputActive ? 'Search' : ' '}
 		<img src={chevron_right_white} alt="chevron arrow" />
 	</button>
@@ -70,8 +70,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: rgba(255, 255, 255, 0);
+		cursor: pointer;
 
+		color: rgba(255, 255, 255, 0);
 		background: #1cb9d9;
 		box-shadow: 0px 8px 16px rgba(16, 102, 119, 0.65);
 		border-radius: 99px;
