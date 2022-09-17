@@ -17,11 +17,14 @@
 
 <script>
 	export let movieDetail
+
+	import Nav from '../../components/Nav.svelte'
 </script>
 
 <section>
 	<div class="container">
-		<button class="back-button"><a href="/">&#9700;</a></button>
+		<Nav />
+		<button class="back-button"><a href="/">← Back</a></button>
 
 		<div class="movie-detail">
 			<img
@@ -67,25 +70,18 @@
 	}
 
 	.back-button {
+		margin-bottom: calc(2em * 0.66);
 		background-color: transparent;
 		border: none;
-		transform: translate(-2.33em, -2.33em) rotate(-45deg);
-		margin-bottom: 1em;
-		position: absolute;
-		transition: all ease-in-out 0.2s;
 	}
 	.back-button a:link,
 	.back-button a:visited,
 	.back-button a:active {
+		color: white;
 		text-decoration: none;
-		color: #c6d2de;
-		font-size: 1em;
-		font-size: 1.33em;
+		font-size: 2em;
+		opacity: 66%;
 		font-weight: 600;
-	}
-	button:hover {
-		transform: translate(-2.33em, -2.33em) rotate(-45deg) scale(1.5);
-		transform-origin: 50%, 50%;
 	}
 
 	.movie-detail {
