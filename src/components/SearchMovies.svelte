@@ -1,15 +1,20 @@
 <script>
 	let searchInputValue = ''
 	import chevron_right_white from '../public/img/chevron-right-white.png'
+	import { goto } from '$app/navigation'
 
 	let searchInputActive = false
 
 	function toggleSearchInputActiveState() {
 		searchInputActive ? (searchInputActive = false) : (searchInputActive = true)
 	}
+
+	function submitSearch() {
+		goto(`/search/${searchInputValue}`)
+	}
 </script>
 
-<form class="search">
+<form class="search" on:submit|preventDefault={submitSearch}>
 	<input
 		bind:value={searchInputValue}
 		name="search_movie"
