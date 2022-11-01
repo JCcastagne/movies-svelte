@@ -35,7 +35,7 @@
 				<h1>{movieDetail.title}</h1>
 				<div class="sub-title">
 					<p>{`${movieDetail.genres[0].name} & ${movieDetail.genres[2].name}`}</p>
-					<h2>&#11089; {movieDetail.vote_average}</h2>
+					<h2>{movieDetail.vote_average.toFixed(1)}</h2>
 				</div>
 				<p>{movieDetail.overview}</p>
 				<p>
@@ -110,6 +110,12 @@
 		color: white;
 		text-shadow: 0 8px 17px rgba(0, 0, 0, 0.42);
 		text-transform: uppercase;
+	}
+
+	h2::before {
+		content: '⭑';
+		position: absolute;
+		transform: translate(-125%, -5%);
 	}
 
 	.sub-title {
